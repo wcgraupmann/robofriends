@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import Hello from "./Hello";
+import reportWebVitals from "./reportWebVitals";
+import "tachyons";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ReactDOM.render(
+  <Hello greeting={"Hello" + "React Ninja"} />,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
