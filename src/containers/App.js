@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import CardList from "./CardList";
+import CardList from "../components/CardList";
 // import { robots } from "./robots";
-import SearchBox from "./SearchBox";
+import SearchBox from "../components/SearchBox";
 // import { render } from "react-dom";
 import "./App.css";
-import Scroll from "./Scroll";
+import Scroll from "../components/Scroll";
 
 class App extends Component {
   constructor() {
@@ -31,14 +31,15 @@ class App extends Component {
   };
 
   render() {
+    // use destructuring to remove redundant this.state...
+    const { robots, searchfield } = this.state;
     // filters robots state with updated searchfield state as condition
-    const filteredRobots = this.state.robots.filter((robots) => {
-      return robots.name
-        .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
+    const filteredRobots = robots.filter((robot) => {
+      return robot.name.toLowerCase().includes(searchfield.toLowerCase());
     });
     // check for slow fetch
-    if (this.state.robots.length === 0) {
+    // robots.length === true when length is 0
+    if (!robots.length) {
       return <h1>Loading</h1>;
     } else {
       return (
