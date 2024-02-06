@@ -8,22 +8,9 @@ import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 
 function App() {
-  // constructor() {
-  //   super(); // need to call super() in order to use this
-  //   // state lives in App, only App can make changes to state
-  //   this.state = {
-  //     robots: [],
-  //     searchfield: "",
-  //   };
-  // }
   const [robots, setRobots] = useState([]);
   const [searchfield, setSearchfield] = useState("");
 
-  // componentDidMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((response) => response.json())
-  //     .then((users) => this.setState({ robots: users }));
-  // }
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
